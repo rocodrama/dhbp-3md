@@ -1,0 +1,50 @@
+project:
+  name: 3MD
+  seed: 42
+
+model:
+  id: google/medgemma-1.5-4b-it
+  base_url: http://127.0.0.1:8000/v1
+  api_key_env: VLLM_API_KEY
+  use_system_role: true
+
+remote_serving:
+  host: gpu-box
+  port: 8000
+  gpu_devices: "0"
+  vllm_bin: vllm
+  log_path: vllm-3md.log
+  extra_args:
+    - --trust-remote-code
+
+generation:
+  temperature: 0
+  top_p: 1
+  seed: 42
+  max_completion_tokens: 512
+
+paths:
+  prompt_root: 02_CODE/configs/prompts
+  manifest_dir: 03_DATA/metadata
+  raw_dir: 03_DATA/raw
+  experiment_dir: 04_EXPERIMENTS
+
+arms:
+  - BASE
+  - PLACEBO
+  - INTJ
+  - INTP
+  - ENTJ
+  - ENTP
+  - INFJ
+  - INFP
+  - ENFJ
+  - ENFP
+  - ISTJ
+  - ISTP
+  - ESTJ
+  - ESTP
+  - ISFJ
+  - ISFP
+  - ESFJ
+  - ESFP

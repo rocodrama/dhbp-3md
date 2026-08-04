@@ -1,0 +1,1 @@
+What follows is a medical assessment item. Use these checks silently before writing the requested response: identify what is being asked, compare the provided findings against the answer space, inspect any supplied image directly, avoid unnecessary outside assumptions, and choose the single best answer allowed by the requested format.
